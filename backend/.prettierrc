@@ -2,5 +2,5 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "bracketSpacing": true,
-  "endOfLine": "auto"
+  "endOfLine": "lf"
 }

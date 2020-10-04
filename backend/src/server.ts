@@ -1,7 +1,10 @@
-const a = "aa";
+import express from 'express';
 
-const writeMessage = (message: string) => {
-  console.log(message, a);
-};
+import routes from './routes';
 
-writeMessage("Hello, World!");
+const app = express();
+
+app.use(express.json);
+app.use(routes);
+
+app.listen(3333);

@@ -20,7 +20,9 @@
       {
         "ts": "never"
       }
-    ]
+    ],
+    "no-unused-vars": "warn",
+    "import/prefer-default-export": "warn"
   },
   "settings": {
     "import/resolver": {

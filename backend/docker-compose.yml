@@ -1,12 +1,14 @@
-version: "3"
+version: '3'
 
 services:
   mongo:
     image: mongo
     container_name: tindev
+    env_file:
+      - .env
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_PASSWORD}
     ports:
       - 27017:27017
     volumes:

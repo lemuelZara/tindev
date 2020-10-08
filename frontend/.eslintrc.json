@@ -43,7 +43,8 @@
       }
     ],
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["off"]
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "no-underscore-dangle": "warn"
   },
   "settings": {
     "import/resolver": {

@@ -1,21 +1,13 @@
 import React from 'react';
+
 import './App.css';
 
-const App: React.FC = () => {
-  const luke = {
-    jedi: true,
-    age: 28,
-    name: 'a',
-  };
+import Routes from './routes';
 
-  // bad
-  const isJedi = luke.age;
-
+export default function App(): JSX.Element {
   return (
-    <div className="App">
-      <h1> Tindev</h1>
+    <div>
+      <Routes />
     </div>
   );
-};
-
-export default App;
+}

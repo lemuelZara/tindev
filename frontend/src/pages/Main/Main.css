@@ -1,0 +1,104 @@
+.main-container {
+  max-width: 65rem;
+  margin: 0 auto;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.main-container ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  row-gap: 3rem;
+  margin-top: 3rem;
+}
+
+.main-container ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container ul li img {
+  max-width: 100%;
+  border-radius: 0.85rem 0.85rem 0 0;
+}
+
+.main-container ul li footer {
+  flex: 1;
+  background: #FFF;
+  border: 1px solid #EEE;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-radius: 0 0 0.85rem 0.85rem;
+}
+
+.main-container ul li footer strong {
+  font-size: 1rem;
+  color: #333;
+}
+
+.main-container ul li footer p {
+  font-size: 0.85rem;
+  line-height: 1.25rem;
+  color: #999;
+  margin-top: 0.85rem;
+}
+
+.main-container ul li .buttons {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.5rem;
+}
+
+.main-container ul li .buttons button {
+  height: 3rem;
+  box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.05);
+  border: 0;
+  border-radius: 0.85rem;
+  background: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.main-container ul li .buttons button:hover, 
+.main-container ul li .buttons button:focus {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.1);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+.main-container .empty {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10rem;
+  color: #999;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .main-container .empty img {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main-container .empty img {
+  margin: 1rem;
+  width: 5%;
+}

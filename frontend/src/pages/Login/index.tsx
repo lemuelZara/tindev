@@ -21,8 +21,6 @@ const Login = () => {
       data: { _id },
     } = await api.post('/devs', dev);
 
-    console.log(_id);
-
     history.push(`/devs/${_id}`);
   }
 

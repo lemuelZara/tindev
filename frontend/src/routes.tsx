@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
 
-const Routes = () => {
+const Routes: React.FC = () => {
   return (
     <BrowserRouter>
       <Route path="/" component={Login} exact />

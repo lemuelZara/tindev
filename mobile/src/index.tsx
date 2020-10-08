@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text } from 'react-native';
+
+import Login from './pages/Login';
 
 const App = () => {
-  return <Text>Lemuel Coelho Zara</Text>;
+  return <Login />;
 };
 
 export default App;

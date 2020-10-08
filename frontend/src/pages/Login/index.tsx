@@ -14,7 +14,7 @@ const Login = () => {
   const [dev, setDev] = useState<ICreateDevData>({ username: '' });
   const history = useHistory();
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent): Promise<void> {
     e.preventDefault();
 
     const {

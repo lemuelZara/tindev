@@ -1,7 +1,7 @@
 import React, { useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import './styles.css';
+import './Login.css';
 
 import logoTindev from '../../assets/logo.svg';
 import api from '../../services/api';
@@ -10,7 +10,7 @@ interface ICreateDevData {
   username: string;
 }
 
-const Login = () => {
+const Login: React.FC = () => {
   const [dev, setDev] = useState<ICreateDevData>({ username: '' });
   const history = useHistory();
 

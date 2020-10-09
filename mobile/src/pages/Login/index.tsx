@@ -30,7 +30,7 @@ const Login: React.FC = () => {
         navigation.navigate('Main', { userId });
       }
     });
-  }, []);
+  }, [navigation]);
 
   async function handleLogin() {
     try {

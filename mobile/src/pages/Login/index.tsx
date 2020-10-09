@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   TextInput,
   KeyboardAvoidingView,
@@ -8,10 +8,33 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+import api from '../../services/api';
 
 import tindevLogo from '../../assets/logo.png';
 
+interface ILogin {
+  username: string;
+}
+
 const Login: React.FC = () => {
+  const { navigate } = useNavigation();
+
+  const [dev, setDev] = useState<ILogin>();
+
+  async function handleLogin() {
+    try {
+      const response = await api.get('/devs');
+
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+
+    // navigate('Main', { data });
+  }
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -25,9 +48,10 @@ const Login: React.FC = () => {
         autoCorrect={false}
         placeholder="Digite seu usuário do GitHub"
         placeholderTextColor="#999"
+        onChangeText={(text) => setDev({ username: text })}
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>

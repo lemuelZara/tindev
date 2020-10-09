@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TextInput,
   KeyboardAvoidingView,
@@ -9,6 +9,7 @@ import {
   Text,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import api from '../../services/api';
 
@@ -19,20 +20,32 @@ interface ILogin {
 }
 
 const Login: React.FC = () => {
-  const { navigate } = useNavigation();
+  const navigation = useNavigation();
 
   const [dev, setDev] = useState<ILogin>();
 
+  useEffect(() => {
+    AsyncStorage.getItem('@Tindev_userId').then((userId) => {
+      if (userId) {
+        navigation.navigate('Main', { userId });
+      }
+    });
+  }, []);
+
   async function handleLogin() {
     try {
-      const response = await api.get('/devs');
+      const {
+        data: { _id: id },
+      } = await api.post('/devs', {
+        username: dev?.username,
+      });
 
-      console.log(response.data);
+      await AsyncStorage.setItem('@Tindev_userId', id);
+
+      navigation.navigate('Main', { id });
     } catch (error) {
       console.log(error);
     }
-
-    // navigate('Main', { data });
   }
 
   return (

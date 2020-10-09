@@ -42,7 +42,7 @@ const Login: React.FC = () => {
 
       await AsyncStorage.setItem('@Tindev_userId', id);
 
-      navigation.navigate('Main', { id });
+      navigation.navigate('Main', { userId: id });
     } catch (error) {
       console.log(error);
     }

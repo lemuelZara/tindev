@@ -1,12 +1,9 @@
 import React from 'react';
-import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Login from './pages/Login';
 import Main from './pages/Main';
-
-import tindevLogo from './assets/logo.png';
 
 const Stack = createStackNavigator();
 

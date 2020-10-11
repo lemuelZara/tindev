@@ -4,6 +4,8 @@ import Dev from '../models/Dev';
 
 class LikeController {
   async store(req: Request, res: Response) {
+    console.log(req.connectedUsers);
+
     const { id } = req.params;
     const { user_id } = req.headers;
 
@@ -15,7 +17,16 @@ class LikeController {
     }
 
     if (targetDev.likes.includes(loggedDev?._id)) {
-      console.log('Match!');
+      const loggedSocket = req.connectedUsers[user_id as string];
+      const targetSocket = req.connectedUsers[id];
+
+      if (loggedSocket) {
+        req.io.to(loggedSocket).emit('match', targetDev);
+      }
+
+      if (targetSocket) {
+        req.io.to(targetSocket).emit('match', loggedDev);
+      }
     }
 
     loggedDev?.likes.push(targetDev._id);

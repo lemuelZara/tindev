@@ -28,9 +28,9 @@
 ## 🖥 Preview 
 
 <p align="center">
-  <img src="./.github/login_page.png" width="500" >
-  <img src="./.github/main_page.png" width="500" >
-  <img src="./.github/match.png" width="500" >
+  <img src="./.github/login_page.png" width="750" >
+  <img src="./.github/main_page.png" width="750" >
+  <img src="./.github/match.png" width="750" >
 </p>
 
 <br>

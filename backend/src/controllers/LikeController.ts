@@ -4,8 +4,6 @@ import Dev from '../models/Dev';
 
 class LikeController {
   async store(req: Request, res: Response) {
-    console.log(req.connectedUsers);
-
     const { id } = req.params;
     const { user_id } = req.headers;
 

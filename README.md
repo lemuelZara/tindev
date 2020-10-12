@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./.github/logo.svg" width="150" >
+  <img src="./.github/logo.svg" width="250" >
 </p>
 
 <div align="center">
@@ -109,10 +109,10 @@ yarn start
 ### ✅ Executando o mobile do Tindev
 
 ```bash
-# Entrar no diretório
+# Entre no diretório
 cd mobile
 
-# Baixar as dependências
+# Baixe as dependências
 yarn
 
 # Inicie a parte mobile

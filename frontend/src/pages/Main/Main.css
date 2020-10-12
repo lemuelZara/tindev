@@ -102,3 +102,47 @@
   margin: 1rem;
   width: 5%;
 }
+
+.match-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.match-container .avatar {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 0.5rem solid #FFF;
+  margin: 2rem 0;
+}
+
+.match-container strong {
+  font-size: 2rem;
+  color: #FFF;
+}
+
+.match-container p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  max-width: 40rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.match-container button {
+  border: 0;
+  background: none;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.125rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}

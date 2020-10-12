@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
+import io from 'socket.io-client';
 
 import './Main.css';
 
@@ -9,6 +10,7 @@ import tindevLogo from '../../assets/logo.svg';
 import like from '../../assets/like.svg';
 import dislike from '../../assets/dislike.svg';
 import brokenHearth from '../../assets/broken-heart.svg';
+import itsAMatch from '../../assets/itsamatch.png';
 
 interface MatchParams {
   id: string;
@@ -21,10 +23,20 @@ interface IDevPlate {
   avatar: string;
 }
 
+interface IDev {
+  name: string;
+  user: string;
+  bio: string;
+  avatar: string;
+  likes: [string];
+  dislikes: [string];
+}
+
 const Main: React.FC = () => {
   const match = useRouteMatch<MatchParams>();
 
   const [devs, setDevs] = useState<IDevPlate[]>([]);
+  const [matchDev, setMatchDev] = useState<IDev>();
 
   useEffect(() => {
     async function loadDevs(): Promise<void> {
@@ -45,6 +57,16 @@ const Main: React.FC = () => {
     }
 
     loadDevs();
+  }, [match.params.id]);
+
+  useEffect(() => {
+    const socket = io('http://localhost:3333', {
+      query: { user: match.params.id },
+    });
+
+    socket.on('match', (dev: IDev) => {
+      setMatchDev(dev);
+    });
   }, [match.params.id]);
 
   async function handleLike(id: string): Promise<void> {
@@ -82,7 +104,6 @@ const Main: React.FC = () => {
               <footer>
                 <strong>{dev.name}</strong>
                 <p>{dev.bio}</p>
-                <p>{dev.id}</p>
               </footer>
 
               <div className="buttons">
@@ -100,6 +121,19 @@ const Main: React.FC = () => {
         <div className="empty">
           <p>Acabou... :C</p>
           <img src={brokenHearth} alt="Coração quebrado" />
+        </div>
+      )}
+
+      {matchDev && (
+        <div className="match-container">
+          <img src={itsAMatch} alt="Match" />
+          <img src={matchDev.avatar} alt="" className="avatar" />
+          <strong>{matchDev.name}</strong>
+          <p>{matchDev.bio}</p>
+
+          <button type="button" onClick={() => setMatchDev(undefined)}>
+            FECHAR
+          </button>
         </div>
       )}
     </div>

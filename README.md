@@ -122,6 +122,8 @@ yarn start
 yarn android
 ```
 
+> Observação: o IP que é usado para realizar a conexão com o backend pode ser diferente, isso vai depender de onde você estiver usando a aplicação mobile (USB, Emulador, Wi-Fi)!
+
 <br>
 
 ---

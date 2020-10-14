@@ -129,3 +129,7 @@ yarn android
 
 ---
 Desenvolvido com 💜 por Lemuel Coelho Zara
+
+<a href="https://www.linkedin.com/in/lemuelZara/">
+  <img src="https://img.shields.io/badge/Lemuel%20Coelho%20Zara--lightgrey?logo=linkedin&style=social" />
+</a>

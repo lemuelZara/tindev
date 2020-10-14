@@ -31,7 +31,7 @@
   <img src="./.github/login_page.png" width="750" >
   <img src="./.github/main_page.png" width="750" >
   <img src="./.github/match.png" width="750" >
-  <img src="./.github/match_mobile.jpg" width="750" >
+  <img src="./.github/match_mobile.jpg" width="250" >
 </p>
 
 <br>
